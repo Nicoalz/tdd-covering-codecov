@@ -1,18 +1,17 @@
+// hotel.test.js
 const getHotels = require('./hotel');
 
-const expectedHotels = {
-  "hotel1": "aaaaaaaaaaa",
-  "hotel2": "bbbbbbbbb",
-  "hotel3": "ccccccccccc"
-}
+describe('getHotels', () => {
+  it('should return the list of hotels when hotels are available', () => {
+    const hotels = {
+      hotel1: "aaaaaaaaaaa",
+      hotel2: "bbbbbbbbb",
+      hotel3: "ccccccccccc"
+    };
+    expect(getHotels(hotels)).toEqual(hotels);
+  });
 
-test('getHotels should return the list of hotels', () => {
-  expect(getHotels()).toEqual(expectedHotels)
-})
-
-test('getHotels should return a message when no hotels are available', () => {
-  if (Object.keys(expectedHotels).length === 0) {
-    const expectedMessage = "Aucun hôtel disponible"
-    expect(getHotels()).toEqual(expectedMessage)
-  }
-})
+  it('should return a message when no hotels are available', () => {
+    expect(getHotels({})).toEqual("Aucun hôtel disponible");
+  });
+});

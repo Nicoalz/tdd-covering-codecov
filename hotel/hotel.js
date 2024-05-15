@@ -1,14 +1,9 @@
-const hotels = {
-  hotel1: "aaaaaaaaaaa",
-  hotel2: "bbbbbbbbb",
-  hotel3: "ccccccccccc"
-}
-
-function getHotels() {
+// hotel.js
+function getHotels(hotels) {
   if (Object.keys(hotels).length === 0) {
-      return "Aucun hôtel disponible"
+    return "Aucun hôtel disponible";
   }
-  return hotels
+  return hotels;
 }
 
-module.exports = getHotels
+module.exports = getHotels;
